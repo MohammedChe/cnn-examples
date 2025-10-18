@@ -7,27 +7,57 @@ os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"   # optional: disable oneDNN optimizat
 
 
 import numpy as np
-import pygame
 import sys
-import tensorflow as tf
 import time
+import argparse
+
+# We'll import tensorflow when needed and import pygame only for GUI mode.
+
 
 try:
     tf.config.set_visible_devices([], "GPU")
 except Exception:
     pass
 
-# Check command-line arguments
-if len(sys.argv) != 2:
-    sys.exit("Usage: python recognition.py model")
-# model = tf.keras.models.load_model(sys.argv[1])
-model = tf.keras.models.load_model(sys.argv[1], compile=False)
+# Parse command-line arguments
+parser = argparse.ArgumentParser(description="MNIST recognition demo (GUI and headless test)")
+parser.add_argument("model", help="Path to the Keras .h5 model file")
+parser.add_argument("--test-load", action="store_true", help="Headless: check model file and try loading it without opening pygame")
+args = parser.parse_args()
+
+# If user requested a headless test-load, try to load the model (if tensorflow is available)
+if args.test_load:
+    model_path = args.model
+    if not os.path.exists(model_path):
+        sys.exit(f"Model file not found: {model_path}")
+    try:
+        import tensorflow as tf
+    except Exception as e:
+        print("TensorFlow is not available in this environment. To fully test model loading, install TensorFlow or run the GUI where available.")
+        print(f"Model file exists: {model_path}")
+        sys.exit(0)
+
+    try:
+        model = tf.keras.models.load_model(model_path, compile=False)
+        print(f"Model loaded successfully: {model_path}")
+        sys.exit(0)
+    except Exception as e:
+        sys.exit(f"Failed to load model: {e}")
+
+# Otherwise proceed with GUI mode. Load TensorFlow model now.
+import tensorflow as tf
+model = tf.keras.models.load_model(args.model, compile=False)
 
 # Colors
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 
-# Start pygame
+# Start pygame (GUI mode)
+try:
+    import pygame
+except ModuleNotFoundError:
+    sys.exit("pygame is not installed in this Python environment. Install it (e.g. `pip install pygame`) or run with --test-load to test model loading without GUI.")
+
 pygame.init()
 size = width, height = 600, 400
 screen = pygame.display.set_mode(size)
