@@ -1,0 +1,39 @@
+Using pip 23.0.1 from /usr/local/lib/python3.10/site-packages/pip (python 3.10)
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: requests>=2.32.5 in /home/vscode/.local/lib/python3.10/site-packages (from -r /workspaces/cnn-examples/requirements.txt (line 1)) (2.32.5)
+Collecting ipywidgets==8.1.7
+  Downloading ipywidgets-8.1.7-py3-none-any.whl (139 kB)
+     ━━━━━━━━━ 139.8/13… 45.5     eta 0:00:00
+               kB        MB/s                
+Collecting matplotlib==3.10.7
+  Downloading matplotlib-3.10.7-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (8.7 MB)
+     ━━━━━━━━━ 8.7/8.7  333.5     eta 0:00:00
+               MB       MB/s                 
+Collecting pandas==2.3.3
+  Downloading pandas-2.3.3-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.8 MB)
+     ━━━━━━━━━ 12.8/12… 337.5     eta 0:00:00
+               MB       MB/s                 
+Collecting torch==2.9.0
+  Downloading torch-2.9.0-cp310-cp310-manylinux_2_28_x86_64.whl (899.8 MB)
+     ━━━━━━━━━ 899.8/8… 390.9     eta 0:00:00
+               MB       MB/s                 
+Collecting torchvision==0.24.0
+  Downloading torchvision-0.24.0-cp310-cp310-manylinux_2_28_x86_64.whl (8.0 MB)
+     ━━━━━━━━━ 8.0/8.0  287.5     eta 0:00:00
+               MB       MB/s                 
+Collecting tqdm==4.67.1
+  Downloading tqdm-4.67.1-py3-none-any.whl (78 kB)
+     ━━━━━━━━━ 78.5/78… 425.0     eta 0:00:00
+               kB       MB/s                 
+Collecting ultralytics==8.3.217
+  Downloading ultralytics-8.3.217-py3-none-any.whl (1.1 MB)
+     ━━━━━━━━━ 1.1/1.1  438.2     eta 0:00:00
+               MB       MB/s                 
+Collecting tensorflow==2.20.0
+  Downloading tensorflow-2.20.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (620.4 MB)
+     ━━━━━━━━━━━━━━━━━━ 620.4/620.4 MB 246.7 MB/s eta 0:00:00
+  Link requires a different Python (3.10.12 not in: '>=3.11'): https://files.pythonhosted.org/packages/f3/db/8e12381333aea300890829a0a36bfa738cac95475d88982d538725143fd9/numpy-2.3.0.tar.gz (from https://pypi.org/simple/numpy/) (requires-python:>=3.11)
+  Link requires a different Python (3.10.12 not in: '>=3.11'): https://files.pythonhosted.org/packages/2e/19/d7c972dfe90a353dbd3efbbe1d14a5951de80c99c9dc1b93cd998d51dc0f/numpy-2.3.1.tar.gz (from https://pypi.org/simple/numpy/) (requires-python:>=3.11)
+  Link requires a different Python (3.10.12 not in: '>=3.11'): https://files.pythonhosted.org/packages/37/7d/3fec4199c5ffb892bed55cff901e4f39a58c81df9c44c280499e92cad264/numpy-2.3.2.tar.gz (from https://pypi.org/simple/numpy/) (requires-python:>=3.11)
+  Link requires a different Python (3.10.12 not in: '>=3.11'): https://files.pythonhosted.org/packages/d0/19/95b3d357407220ed24c139018d2518fab0a61a948e68286a25f1a4d049ff/numpy-2.3.3.tar.gz (from https://pypi.org/simple/numpy/) (requires-python:>=3.11)
+  Link requires a different Python (3.10.12 not in: '>=3.11'): https://files.pythonhosted.org/packages/b5/f4/098d2270d52b41f1bd7db9fc288aaa0400cb48c2a3e2af6fa365d9720947/numpy-2.3.4.tar.gz (from https://pypi.org/simple/numpy/) (requires-python:>=3.11)
